@@ -2,4 +2,4 @@
 //= require angular/angular-resource
 //= require ./app
 //= require ./controllers
-
+//= require ./services

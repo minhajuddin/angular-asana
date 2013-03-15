@@ -6,3 +6,12 @@
 #content{
   min-height: 500px;
 }
+
+#tasks-list{
+  list-style: none;
+  li.completed span.title{
+    text-decoration: line-through;
+    color: #888;
+  }
+}
+

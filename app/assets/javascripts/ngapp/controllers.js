@@ -1,5 +1,6 @@
 /* Controllers */
 
-function TasksCtrl($scope){
-  $scope.greet = 'Welcome'
-}
+AA.ngAsana.controller('TasksCtrl', function($scope, Task) {
+  $scope.tasks = Task.query()
+});
+

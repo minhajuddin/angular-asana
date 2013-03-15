@@ -1,5 +1,11 @@
 <div ng-app='ngAsana'>
   <div ng-controller='TasksCtrl'>
-    <h1>{{greet}}</h1>
+    <p>Showing {{tasks.length}} tasks</p>
+    <ul id='tasks-list'>
+      <li ng-repeat='t in tasks' ng-class='{completed: t.completed}'>
+        <input type="checkbox" ng-model='t.completed' >
+        <span class='title'>{{t.title}}</span>
+      </li>
+    </ul>
   </div>
 </div>
