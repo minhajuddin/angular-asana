@@ -1,14 +1,23 @@
 <!DOCTYPE html>
 <html>
-<head>
-  <title>AngularAsana</title>
-  <%= stylesheet_link_tag    "application", :media => "all" %>
-  <%= javascript_include_tag "application" %>
-  <%= csrf_meta_tags %>
-</head>
-<body>
+  <head>
+    <title>AngularAsana</title>
+    <%= stylesheet_link_tag    "application", :media => "all" %>
+    <%= javascript_include_tag "application" %>
+    <%= csrf_meta_tags %>
+  </head>
+  <body>
+    <div id="wrapper">
+      <div id="header">
+        <h1>Angular Asana</h1>
+      </div>
 
-<%= yield %>
-
-</body>
+      <div id="content">
+        <%= yield %>
+      </div>
+      <div id="footer">
+        Angular Asana Copyleft 2013
+      </div>
+    </div>
+  </body>
 </html>
