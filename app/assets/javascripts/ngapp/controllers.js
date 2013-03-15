@@ -34,6 +34,14 @@ AA.ngAsana.controller('TasksCtrl', function($scope, Task) {
     console.log('adding task at', i)
     $scope.tasks.splice(i + 1, 0, t)
     $scope.selectedTask = t;
+  };
+
+  $scope.addComment = function(task) {
+    task.comments.push({
+      text: $scope.newComment.text
+    })
+    task.$update()
+    $scope.newComment = {}
   }
 });
 

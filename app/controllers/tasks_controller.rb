@@ -23,6 +23,10 @@ class TasksController < ApplicationController
 
     #TODO: how do we handle failures
     @task.update_attributes(params[:task])
+    params[:comments].each do |comment|
+      @task.comments.create comment unless comment[:id]
+    end
+    #@task.update_attributes(params.except(:id, :created_at, :updated_at, :action, :controller))
     respond_with @task
   end
 
