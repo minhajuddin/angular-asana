@@ -4,7 +4,7 @@
 end
 
 (1..10).each do |i| 
-  t = Task.create title: "Task #{i}", description: "Task #{i}", completed: [true,false].sample 
+  t = Task.create title: "Task #{i}", description: "Awesome description for Task #{i}", completed: [true,false].sample 
   (2..5).to_a.sample.times do |j|
     t.comments.create text: "Comment for #{i}#{j}"
   end

@@ -1,18 +1,28 @@
 <div ng-app='ngAsana'>
   <div ng-controller='TasksCtrl'>
     <p>Showing {{tasks.length}} tasks</p>
-    <ul id='tasks-list'>
-      <li ng-repeat='t in tasks' ng-class='{completed: t.completed}'>
-        <label>
-          <input type="checkbox" ng-model='t.completed' ng-change='save(t)'>
-          <span class='title'>{{t.title}}</span>
-        </label>
+    <div id='tasks-wrapper'>
+      <div id="tasks-list">
         <ul>
-          <li ng-repeat='c in t.comments'>
+          <li ng-repeat='t in tasks' ng-class='{completed: t.completed, selected: t == selectedTask}' ng-click='selectTask(t)'>
+            <input type="checkbox" ng-model='t.completed' ng-change='save(t)'>
+            <span class='title'>{{t.title}}</span>
+          </li>
+        </ul>
+      </div>
+
+      <div id="task-detail">
+        <p>
+          {{selectedTask.description}}
+        </p>
+        <ul>
+          <li ng-repeat='c in selectedTask.comments'>
             {{c.text}}
           </li>
         </ul>
-      </li>
-    </ul>
+      </div>
+
+      <div class="clear"></div>
+    </div>
   </div>
 </div>

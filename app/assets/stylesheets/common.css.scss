@@ -1,5 +1,5 @@
 #wrapper{
-  width: 800px;
+  width: 90%;
   margin: 0 auto;
 }
 
@@ -7,11 +7,41 @@
   min-height: 500px;
 }
 
-#tasks-list{
+#tasks-wrapper ul{
   list-style: none;
+}
+
+#tasks-list{
+  &>ul{
+    border-bottom: solid 2px #DDD;
+    padding: 0;
+    margin: 0;
+  }
+  &>ul>li{
+    padding: 2px 5px;
+    border-top: solid 2px #DDD;
+  }
+  li.selected{
+    background-color: #ff8;
+  }
   li.completed span.title{
     text-decoration: line-through;
     color: #888;
   }
+}
+
+#task-detail{
+  background-color: #ff8;
+}
+
+.clear{clear:both;}
+
+#tasks-list{
+  float:left;
+  width: 60%;
+}
+#task-detail{
+  float:right;
+  width: 40%;
 }
 
