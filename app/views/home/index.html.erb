@@ -3,8 +3,10 @@
     <p>Showing {{tasks.length}} tasks</p>
     <ul id='tasks-list'>
       <li ng-repeat='t in tasks' ng-class='{completed: t.completed}'>
-        <input type="checkbox" ng-model='t.completed' >
-        <span class='title'>{{t.title}}</span>
+        <label>
+          <input type="checkbox" ng-model='t.completed' ng-change='save(t)'>
+          <span class='title'>{{t.title}}</span>
+        </label>
       </li>
     </ul>
   </div>

@@ -1,4 +1,6 @@
 /* Services */
 AA.ngAsana.factory('Task', function($resource){
-  return $resource('tasks/:id', {})
+  return $resource('tasks/:id', {id: '@id'}, {
+    'update': {method: 'PUT'}
+  })
 })
