@@ -2,7 +2,7 @@ class TasksController < ApplicationController
   respond_to :json
 
   def index
-    respond_with Task.all
+    respond_with Task.includes(:comments).all.to_json(include: :comments)
   end
 
   def show

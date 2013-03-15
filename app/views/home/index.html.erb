@@ -7,6 +7,11 @@
           <input type="checkbox" ng-model='t.completed' ng-change='save(t)'>
           <span class='title'>{{t.title}}</span>
         </label>
+        <ul>
+          <li ng-repeat='c in t.comments'>
+            {{c.text}}
+          </li>
+        </ul>
       </li>
     </ul>
   </div>
