@@ -1,6 +1,6 @@
 // Declare app level module which depends on filters, and services
 window.AA = {}
-AA.ngAsana = angular.module('ngAsana', ['ngResource']);
+AA.ngAsana = angular.module('ngAsana', ['ngResource', 'ui']);
 
 //.
 //config(['$routeProvider', function($routeProvider) {
