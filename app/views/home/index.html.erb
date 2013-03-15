@@ -6,8 +6,9 @@
         <ul>
           <li ng-repeat='t in tasks' ng-class='{completed: t.completed, selected: t == selectedTask}' ng-click='selectTask(t)'>
             <input type="checkbox" ng-model='t.completed' ng-change='save(t)'>
-            <span class='title' ng-hide='t == selectedTask'>{{t.title}}</span>
-            <input type='text' ng-model='t.title' ng-show='t == selectedTask' class='edit-title' ng-change='save(t)' ui-keypress='{enter: "addNewTaskBelow(t)"}' autofocus>
+            <input type='text' ng-model='t.title' class='edit-title'
+            ng-change='save(t)' ui-keypress='{enter: "addNewTaskBelow(t)"}'
+            autofocus>
           </li>
         </ul>
       </div>
