@@ -22,8 +22,9 @@ class TasksController < ApplicationController
     @task = Task.find(params[:id])
 
     #TODO: how do we handle failures
+    comments = params[:task].delete(:comments) || []
     @task.update_attributes(params[:task])
-    params[:comments].each do |comment|
+    comments.each do |comment|
       @task.comments.create comment unless comment[:id]
     end
     #@task.update_attributes(params.except(:id, :created_at, :updated_at, :action, :controller))

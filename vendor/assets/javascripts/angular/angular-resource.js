@@ -321,7 +321,7 @@ angular.module('ngResource', ['ng']).
     };
 
 
-    function ResourceFactory(url, paramDefaults, actions) {
+    function ResourceFactory(url, paramDefaults, actions, modelName) {
       var route = new Route(url);
 
       actions = extend({}, DEFAULT_ACTIONS, actions);
@@ -382,10 +382,12 @@ angular.module('ngResource', ['ng']).
           }
 
           var value = this instanceof Resource ? this : (action.isArray ? [] : new Resource(data));
+          var formData = {}
+          formData[modelName] = data
           $http({
             method: action.method,
             url: route.url(extend({}, extractParams(data, action.params || {}), params)),
-            data: data
+            data: formData
           }).then(function(response) {
               var data = response.data;
 
