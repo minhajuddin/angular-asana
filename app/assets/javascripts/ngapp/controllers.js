@@ -3,6 +3,7 @@
 AA.ngAsana.controller('TasksCtrl', function($scope, Task) {
 
   $scope.tasks = Task.query(function(tasks) {
+    if(tasks.length === 0) $scope.addNewTaskBelow(null);
     $scope.selectedTask = tasks[0]
   })
 

@@ -23,7 +23,9 @@ AngularAsana::Application.configure do
   config.action_dispatch.best_standards_support = :builtin
 
   # Raise exception on mass assignment protection for Active Record models
-  config.active_record.mass_assignment_sanitizer = :strict
+  # TODO: Just stop complaining about mass assignment. A better way would be to prevent 
+  # those attributes from being sent to the server itself. That should be from AngularJS side.
+  # config.active_record.mass_assignment_sanitizer = :strict
 
   # Log the query plan for queries taking more than this (works
   # with SQLite, MySQL, and PostgreSQL)

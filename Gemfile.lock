@@ -137,7 +137,7 @@ DEPENDENCIES
   pry-nav
   pry-rails
   pry-stack_explorer
-  rails (= 3.2.12)
+  rails (~> 3.2.12)
   sass-rails (~> 3.2.3)
   sqlite3
   therubyracer

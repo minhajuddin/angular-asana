@@ -1,31 +1,31 @@
-<div ng-app='ngAsana'>
-  <div ng-controller='TasksCtrl'>
+<div ng-app="ngAsana">
+  <div ng-controller="TasksCtrl">
     <p>Showing {{tasks.length}} tasks</p>
-    <div id='tasks-wrapper'>
+    <div id="tasks-wrapper">
       <div id="tasks-list">
         <ul>
-          <li ng-repeat='t in tasks' ng-class='{completed: t.completed, selected: t == selectedTask}' ng-click='selectTask(t)'>
-            <input type="checkbox" ng-model='t.completed' ng-change='save(t)'>
-            <input type='text' ng-model='t.title' class='edit-title'
-            ng-change='save(t)' ui-keypress='{enter: "addNewTaskBelow(t)"}'
-            placeholder='Task title' autofocus>
+          <li ng-repeat="t in tasks" ng-class="{completed: t.completed, selected: t == selectedTask}" ng-click="selectTask(t)">
+            <input type="checkbox" ng-model="t.completed" ng-change="save(t)">
+            <input type="text" ng-model="t.title" class="edit-title"
+            ng-change="save(t)" ui-keypress="{enter: 'addNewTaskBelow(t)'}"
+            placeholder="Task title" autofocus>
           </li>
         </ul>
       </div>
       <div id="task-detail">
         <div>
-          <textarea ng-model='selectedTask.description' placeholder='Task Description' ng-change='save(selectedTask)'>{{selectedTask.description}}</textarea>
+          <textarea ng-model="selectedTask.description" placeholder="Task Description" ng-change="save(selectedTask)">{{selectedTask.description}}</textarea>
         </div>
         <ul>
-          <li ng-repeat='c in selectedTask.comments'>
+          <li ng-repeat="c in selectedTask.comments">
             {{c.text}}
           </li>
         </ul>
 
         <div>
-          <textarea ng-model='newComment.text' placeholder='Comment text'></textarea>
+          <textarea ng-model="newComment.text" placeholder="Comment text"></textarea>
           <br />
-          <button ng-click='addComment(selectedTask)'>Add Comment</button>
+          <button ng-click="addComment(selectedTask)">Add Comment</button>
         </div>
       </div>
 
