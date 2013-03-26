@@ -1,0 +1,21 @@
+div ng-app="ngAsana"
+  div ng-controller="TasksCtrl"
+    p Showing {{tasks.length}}
+    #tasks-wrapper
+      #tasks-list
+        ul
+          li ng-class="{completed: t.completed, selected: t ==selectedTask}" ng-click="selectTask(t)" ng-repeat="t in tasks"
+            input ng-change="save(t)" ng-model="t.completed" type="checkbox"
+              input.edit-title autofocus="" ng-change="save(t)" ng-model="t.title" placeholder="Task title" type="text" ui-keypress="{enter: 'addNewTaskBelow(t)'}"
+      #task-detail
+        div
+          textarea ng-change="save(selectedTask)" ng-model="selectedTask.description" placeholder="Task Description" 
+          | {{ selectedTask.description}}
+        ul
+          li ng-repeat="c in selectedTask.comments"
+            | {{c.text}}
+        div
+          textarea ng-model="newComment.text" placeholder="Comment text"
+          br/
+          button ng-click="addComment(selectedTask)" Add Comment
+      .clear

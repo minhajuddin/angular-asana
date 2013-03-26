@@ -1,0 +1,16 @@
+doctype
+html lang="en"
+  head
+    title AngularAsana
+    meta content="IE=Edge" http-equiv="X-UA-Compatible"
+    = stylesheet_link_tag "application", :media => "all"
+    = csrf_meta_tags
+  body
+    #wrapper
+      #header
+        h1 Angular Asana
+      #content
+        = yield
+      #footer
+        | Angular Asana Copyleft 2013
+    = javascript_include_tag "application"
