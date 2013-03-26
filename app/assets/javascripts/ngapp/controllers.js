@@ -46,3 +46,8 @@ AA.ngAsana.controller('TasksCtrl', function($scope, Task) {
   }
 });
 
+AA.ngAsana.controller('SessionCtrl', function($scope, Session) {
+  $scope.newLogin = function() {
+    Session.newSession();
+  };
+});
