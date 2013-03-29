@@ -1,4 +1,5 @@
 class SessionController < ApplicationController
+  include SessionHelper
 
   respond_to :html, :json
 
@@ -6,6 +7,7 @@ class SessionController < ApplicationController
   end
 
   def create
+    respond_with @user,location: 'nil' if assertion_valid?
   end
 
   def destroy

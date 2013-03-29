@@ -1,16 +1,20 @@
 /* Services */
 AA.ngAsana.factory('Task', function($resource){
-  return $resource('tasks/:id', {id: '@id'}, {
-    'update': {method: 'PUT'}
-  }, 'task')
+  return $resource('tasks/:id', 
+                   {id: '@id'},
+                   {'update': {method: 'PUT'}},
+                   'task');
 })
 
 AA.ngAsana.factory('Session', function($resource) {
+  var SessionR = $resource('/session', null, null, 'session');
   function SessionService() {
     navigator.id.watch({
       loggedInUser: null,
       onlogin: function(assertion) {
-        console.log('verifying');
+        var login = new SessionR({assertion: assertion});
+        console.log(login);
+        login.$save();
       },
       onlogout: function() {
         console.log('loggedout');
